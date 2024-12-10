@@ -20,8 +20,8 @@
     echo -e "\033[32m DONE \033[0m" 
     echo "Создание пользователя"
     {
-    pveum group add Net
-    pveum useradd net1@pve --password P@ssw0rd --enable 1 --groups Net
+    pveum group add net
+    pveum useradd net1@pve --password P@ssw0rd --enable 1 --groups net
     pveum acl modify /vms/1010 --roles PVEVMUser --users net1@pve
     pveum acl modify /vms/1011 --roles PVEVMUser --users net1@pve
     } &>/dev/null
