@@ -21,9 +21,9 @@
     echo "Создание пользователя"
     {
     pveum group add Net
-    pveum useradd Net1@pve --password P@ssw0rd --enable 1 --groups Net
-    pveum acl modify /vms/1010 --roles PVEVMUser --users Net1@pve
-    pveum acl modify /vms/1011 --roles PVEVMUser --users Net1@pve
+    pveum useradd net1@pve --password P@ssw0rd --enable 1 --groups Net
+    pveum acl modify /vms/1010 --roles PVEVMUser --users net1@pve
+    pveum acl modify /vms/1011 --roles PVEVMUser --users net1@pve
     } &>/dev/null
     echo -e "\033[32m DONE \033[0m\n\n"
-    echo -e "\033[34m Для доступа используйте:\033[0m\n\033[32mЛогин:\033[31mNet1\n\033[32mПароль:\033[31mP@ssw0rd\033[0m"
+    echo -e "\033[34m Для доступа используйте:\033[0m\n\033[32mЛогин:\033[31mnet1\n\033[32mПароль:\033[31mP@ssw0rd\033[0m"
