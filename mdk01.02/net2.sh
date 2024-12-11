@@ -14,7 +14,7 @@
     {
     qm clone 100 1012 --name "ecorouter"
     qm clone 101 1013 --name AltSrv
-    qm set 1012 --net0 vmxnet3=1C:87:76:40:00:00,bridge=vmbr9999 --net2 vmxnet3=1C:87:76:40:00:01,bridge=vmbr0 --net2 vmxnet3=1C:87:76:40:00:02,bridge=vmbr1011 --tags="net2 mdk01.02"
+    qm set 1012 --net0 vmxnet3=1C:87:76:40:00:00,bridge=vmbr9999 --net1 vmxnet3=1C:87:76:40:00:01,bridge=vmbr0 --net2 vmxnet3=1C:87:76:40:00:02,bridge=vmbr1011 --net3 vmxnet3=1C:87:76:40:00:03,bridge=vmbr0  --tags="net2 mdk01.02"
     qm set 1013 --net0  vmxnet3,bridge=vmbr1011 --tags="net2 mdk01.02"
     } &> /dev/null
     echo -e "\033[32m DONE \033[0m" 
