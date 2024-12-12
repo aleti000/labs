@@ -13,7 +13,7 @@
     echo "Create VM"
     {
     qm clone 101 2010 --name AltSrv
-    qm set 2010 --net0  vmxnet3,bridge=vmbr2010 --tags="mdk02.01"
+    qm set 2010 --net0  vmxnet3,bridge=vmbr0 --tags="mdk02.01"
     } &> /dev/null
     echo -e "\033[32m DONE \033[0m" 
     echo "Create User"
