@@ -14,8 +14,8 @@
     {
     qm clone 100 1014 --name "ecorouter"
     qm clone 101 1015 --name AltSrv
-    qm set 1014 --net0 vmxnet3=1C:87:76:40:00:00,bridge=vmbr9999 --net2 vmxnet3=1C:87:76:40:00:01,bridge=vmbr0 --net2 vmxnet3=1C:87:76:40:00:02,bridge=vmbr1012 --net3 vmxnet3=1C:87:76:40:00:03,bridge=vmbr0 --tags="net3 mdk01.02"
-    qm set 1015 --net0  vmxnet3,bridge=vmbr1012 --tags="net3 mdk01.02"
+    qm set 1014 --net0 vmxnet3=1C:87:76:40:00:00,bridge=vmbr9999 --net2 vmxnet3=1C:87:76:40:00:01,bridge=vmbr0 --net2 vmxnet3=1C:87:76:40:00:02,bridge=vmbr1012 --net3 vmxnet3=1C:87:76:40:00:03,bridge=vmbr0 --tags="mdk01.02 net3"
+    qm set 1015 --net0  vmxnet3,bridge=vmbr1012 --tags="mdk01.02 net3"
     } &> /dev/null
     echo -e "\033[32m DONE \033[0m" 
     echo "Create User"
