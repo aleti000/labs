@@ -20,8 +20,7 @@
     {
     pveum group add adm
     pveum useradd adm17@pve --password P@ssw0rd --enable 1 --groups net
-    pveum acl modify /vms/1010 --roles PVEVMUser --users adm17@pve
-    pveum acl modify /vms/1011 --roles PVEVMUser --users adm17@pve
+    pveum acl modify /vms/2010 --roles PVEVMUser --users adm17@pve
     } &>/dev/null
     echo -e "\033[32m DONE \033[0m\n\n"
     echo -e "\033[34m To login use:\033[0m\n\033[32mLogin:\033[31madm17\n\033[32mPassword:\033[31mP@ssw0rd\033[0m"
