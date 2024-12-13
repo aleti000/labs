@@ -42,7 +42,8 @@ VirtualBox: не ниже 7.0
 
     где **хх** - номер компьютера  
     #### Дома можно использовать любой свободный адрес.  
-6. Перезагрузить сеть командой __systemctl restart networking__
+6. Перезагрузить сеть командой  
+    `systemctl restart networking`
 </details>
 <details>
 <summary>
