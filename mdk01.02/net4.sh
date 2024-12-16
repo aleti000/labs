@@ -60,4 +60,4 @@
     pveum acl modify /vms/1020 --roles PVEVMUser --users net4@pve
     } &>/dev/null
     echo -e "\033[32m DONE \033[0m\n\n"
-    echo -e "\033[34m To login use:\033[0m\n\033[32mLogin:\033[31mnet3\n\033[32mPassword:\033[31mP@ssw0rd\033[0m"
+    echo -e "\033[34m To login use:\033[0m\n\033[32mLogin:\033[31mnet4\n\033[32mPassword:\033[31mP@ssw0rd\033[0m"
