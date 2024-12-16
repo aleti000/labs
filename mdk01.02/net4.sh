@@ -36,7 +36,7 @@
     systemctl restart networking
     echo -e "\033[32m DONE \033[0m" 
     echo "Create VM"
-    {
+    
     qm clone 100 1017 --name "HQ"
     qm clone 100 1018 --name "BR"
     qm clone 101 1016 --name ISP
@@ -47,7 +47,7 @@
     qm set 1018 --net0 vmxnet3=1C:87:76:40:00:03,bridge=vmbr9999 --net2 vmxnet3=1C:87:76:40:00:04,bridge=vmbr1014 --net3 vmxnet3=1C:87:76:40:00:05,bridge=vmbr1015 --tags="mdk01.02 net4" #BR
     qm set 1019 --net0  vmxnet3,bridge=vmbr1015,tag100 --tags="mdk01.02 net4" #BRSRV
     qm set 1020 --net0  vmxnet3,bridge=vmbr1016,tag200 --tags="mdk01.02 net4" #HQSRV
-    } &> /dev/null
+    
     echo -e "\033[32m DONE \033[0m" 
     echo "Create User"
     {
