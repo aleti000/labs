@@ -11,20 +11,20 @@
     echo -e "\033[32m DONE \033[0m" 
     echo "Create VM"
     {
-       qm clone 101 1996 --name Srv
-       qm clone 101 1997 --name Srv1
-       qm clone 101 1998 --name Srv2
-       qm clone 101 1999 --name Srv3
-       qm set 1996 --net0  vmxnet3,bridge=vmbr0 --net1  vmxnet3,bridge=vmbr1999 --virtio1 local-lvm:1 --virtio2 local-lvm:1 --virtio3 local-lvm:1 --virtio4 local-lvm:1 --tags="mdk02.01 exam"
-       qm set 1997 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
-       qm set 1998 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
-       qm set 1999 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
+       qm clone 101 1996 --name GW
+       qm clone 101 1997 --name Files
+       qm clone 101 1998 --name DNS
+       qm clone 101 1999 --name SRV
+       qm set 1996 --net0  vmxnet3,bridge=vmbr0 --net1  vmxnet3,bridge=vmbr1999 --serial0 socket --tags="mdk02.01 exam"
+       qm set 1997 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --virtio1 local-lvm:1 --virtio2 local-lvm:1 --virtio3 local-lvm:1 --virtio4 local-lvm:1 --tags="mdk02.01 exam"
+       qm set 1998 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --tags="mdk02.01 exam"
+       qm set 1999 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --tags="mdk02.01 exam"
     } &> /dev/null
     echo -e "\033[32m DONE \033[0m" 
     echo "Create User"
     {
-    pveum group add net
-    pveum useradd examadm@pve --password P@ssw0rd --enable 1 --groups net
+    pveum group add adm
+    pveum useradd examadm@pve --password P@ssw0rd --enable 1 --groups adm
     pveum acl modify /vms/1996 --roles PVEVMUser --users examadm@pve
     pveum acl modify /vms/1997 --roles PVEVMUser --users examadm@pve
     pveum acl modify /vms/1998 --roles PVEVMUser --users examadm@pve
