@@ -15,7 +15,7 @@
        qm clone 101 1997 --name Srv1
        qm clone 101 1998 --name Srv2
        qm clone 101 1999 --name Srv3
-       qm set 1996 --net0  vmxnet3,bridge=vmbr0 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
+       qm set 1996 --net0  vmxnet3,bridge=vmbr0 --net1  vmxnet3,bridge=vmbr1999 --virtio1 local-lvm:1 --virtio2 local-lvm:1 --virtio3 local-lvm:1 --virtio4 local-lvm:1 --tags="mdk02.01 exam"
        qm set 1997 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
        qm set 1998 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
        qm set 1999 --net0  vmxnet3,bridge=vmbr1999 --tags="mdk02.01 exam"
