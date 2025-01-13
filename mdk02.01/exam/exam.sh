@@ -15,10 +15,10 @@
        qm clone 101 1997 --name Files
        qm clone 101 1998 --name DNS
        qm clone 101 1999 --name SRV
-       qm set 1996 --net0  vmxnet3,bridge=vmbr0 --net1  vmxnet3,bridge=vmbr1999 --serial0 socket --tags="mdk02.01 exam"
-       qm set 1997 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --virtio1 local-lvm:1 --virtio2 local-lvm:1 --virtio3 local-lvm:1 --virtio4 local-lvm:1 --tags="mdk02.01 exam"
-       qm set 1998 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --tags="mdk02.01 exam"
-       qm set 1999 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --tags="mdk02.01 exam"
+       qm set 1996 --net0  vmxnet3,bridge=vmbr0 --net1  vmxnet3,bridge=vmbr1999 --serial0 socket --agent enabled=1 --tags="mdk02.01 exam"
+       qm set 1997 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --virtio1 local-lvm:1 --virtio2 local-lvm:1 --virtio3 local-lvm:1 --virtio4 local-lvm:1 --agent enabled=1 --tags="mdk02.01 exam"
+       qm set 1998 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --agent enabled=1 --tags="mdk02.01 exam"
+       qm set 1999 --net0  vmxnet3,bridge=vmbr1999 --serial0 socket --agent enabled=1 --tags="mdk02.01 exam"
     } &> /dev/null
     echo -e "\033[32m DONE \033[0m" 
     echo "Create User"
