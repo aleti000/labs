@@ -56,6 +56,7 @@ echo -e "\033[95m\nПараметры iptables\033[0m"
         echo -e "\033[33m$data1\033[0m"
  echo -e "\033[95m\nПроверка SSH:\033[0m"
     #SSH_GW
+    echo -e "\033[32mGW -\033[0m"
          data=$(qm guest exec 1996 systemctl status sshd |jq '."out-data"')
         data1=$(echo -e $data |grep Active )
         echo -e "\033[33m$data1\033[0m"
