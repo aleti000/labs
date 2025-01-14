@@ -113,5 +113,5 @@ echo -e "\033[95m\nПараметры iptables\033[0m"
         echo -e "\033[33m$data1\033[0m"  
     #RAID_Files
     echo -e  "\033[95m\nПроверка RAID:\033[0m" 
-        data=$(qm guest exec 1999 cat /etc/openssh/lsblk | jq '."out-data"')
+        data=$(qm guest exec 1997 lsblk | jq '."out-data"')
         echo -e "\033[33m$data1\033[0m"
