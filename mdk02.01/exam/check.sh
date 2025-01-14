@@ -63,10 +63,10 @@ echo -e "\033[95m\nПараметры iptables\033[0m"
         data1=$(echo -e $data | grep Port |grep -v \#Gateway)
         echo -e "\033[33m$data1\033[0m"
         data=$(qm guest exec 1996 cat /etc/openssh/sshd_config|jq '."out-data"')
-        data1=$(echo -e $data | grep PermitRootLogin )
+        data1=$(echo -e $data | grep PermitRootLogin |grep -v "the setting of")
         echo -e "\033[33m$data1\033[0m"
         data=$(qm guest exec 1996 cat /etc/openssh/sshd_config|jq '."out-data"')
-        data1=$(echo -e $data | grep PasswordAuthentication )
+        data1=$(echo -e $data | grep PasswordAuthentication |grep -v PAM authentication |grep -v PAM configuration)
         echo -e "\033[33m$data1\033[0m"
 
 
