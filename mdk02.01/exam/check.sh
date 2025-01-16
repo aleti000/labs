@@ -46,6 +46,10 @@ echo -e "\033[95m\nПроверка доступа в сеть интернет\
         data=$(qm guest exec 1999 -- ping 8.8.8.8 -c 1 |jq '."out-data"')
         data1=$(echo -e $data |grep received)
         echo -e "\033[32mSRV:\033[0m\n\033[33m$data1\033[0m"
+    #RAID_Files
+        echo -e  "\033[95m\nПроверка RAID:\033[0m" 
+        data=$(qm guest exec 1997 lsblk | jq '."out-data"')
+        echo -e "\033[33m$data\033[0m"
 echo -e "\033[95m\nПараметры iptables\033[0m"    
     #IPTABLES_GW
         data=$(qm guest exec 1996 systemctl status iptables |jq '."out-data"')
@@ -123,7 +127,3 @@ echo -e "\033[95m\nПараметры iptables\033[0m"
         data=$(qm guest exec 1999 cat /etc/openssh/sshd_config|jq '."out-data"')
         data1=$(echo -e $data | grep PasswordAuthentication |grep -v PAM)
         echo -e "\033[33m$data1\033[0m"  
-    #RAID_Files
-    echo -e  "\033[95m\nПроверка RAID:\033[0m" 
-        data=$(qm guest exec 1997 lsblk | jq '."out-data"')
-        echo -e "\033[33m$data\033[0m"
