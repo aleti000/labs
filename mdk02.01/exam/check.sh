@@ -37,15 +37,15 @@ echo -e "\033[95m\nПроверка доступа в сеть интернет\
     #files
         data=$(qm guest exec 1997 -- ping 8.8.8.8 -c 1 |jq '."out-data"')
         data1=$(echo -e $data |grep received)
-        echo -e "\033[32mFiles:\033[0m\n$data1\033[32m\033[0m"
+        echo -e "\033[32mFiles:\033[0m\n\033[32m$data1\033[0m"
     #DNS
         data=$(qm guest exec 1998 -- ping 8.8.8.8 -c 1 |jq '."out-data"')
         data1=$(echo -e $data |grep received)
-        echo -e "\033[32mDNS:\033[0m\n$data1\033[32m\033[0m"
+        echo -e "\033[32mDNS:\033[0m\n\033[32m$data1\033[0m"
     #srv
         data=$(qm guest exec 1999 -- ping 8.8.8.8 -c 1 |jq '."out-data"')
         data1=$(echo -e $data |grep received)
-        echo -e "echo -e "\033[32mSRV:\033[0m\n$data1\033[32m\033[0m""
+        echo -e "\033[32mSRV:\033[0m\n\033[32m$data1\033[0m"
 echo -e "\033[95m\nПараметры iptables\033[0m"    
     #IPTABLES_GW
         data=$(qm guest exec 1996 systemctl status iptables |jq '."out-data"')
